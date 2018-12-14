@@ -43,7 +43,15 @@ INSTALLED_APPS = [
   'django.contrib.sessions',
   'django.contrib.messages',
   'django.contrib.staticfiles',
+  'corsheaders',
+  'rest_framework',
+  'rest_framework.authtoken',
+  'rest_auth',
   'webpack_loader',
+  'django.contrib.sites',
+  'allauth',
+  'allauth.account',
+  'rest_auth.registration',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +62,8 @@ MIDDLEWARE = [
   'django.contrib.auth.middleware.AuthenticationMiddleware',
   'django.contrib.messages.middleware.MessageMiddleware',
   'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'corsheaders.middleware.CorsMiddleware',
+  'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'cp_django.urls'
@@ -140,3 +150,10 @@ WEBPACK_LOADER = {
     'IGNORE': ['.+\.hot-update.js', '.+\.map'],
   }
 }
+
+SITE_ID = 1
+
+CORS_ORIGIN_WHITELIST = (
+  'localhost:3000',
+  '127.0.0.1:3000',
+)

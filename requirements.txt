@@ -1,7 +1,11 @@
 django==2.1.4
 django-environ
+wheel
 mysqlclient==1.3.14
+django-cors-headers
 djangorestframework
+django-allauth
 markdown
 django-filter
 django-webpack-loader
+django-rest-auth[with_social]
